@@ -1,25 +1,25 @@
 ---
 
 ---
-<header class="w-full fixed top-0 left-0 z-50">
+<header class="w-full fixed z-50 backdrop-blur-xs bg-opacity-70 bg-[var(--color-primary)] shadow-sm">
     <!-- Desktop Navigation -->
-    <nav class="w-full mx-auto hidden md:block">
-        <ul class="flex items-center justify-center space-x-8 py-4">
-            <li class="nav-item"><a href="#about">About us</a></li>
-            <li class="nav-item"><a href="#services">Services</a></li>
-            <li class="logo">
+    <nav class="mx-auto hidden md:block">
+        <ul class="flex items-center justify-center space-x-8 py-0">
+            <li class="nav-item text-2xl"><a href="#about">About us</a></li>
+            <li class="nav-item text-2xl"><a href="#services">Services</a></li>
+            <li class="flex items-center justify-center">
                 <a href="/">
-                    <img src="/Logo_sinFondo.webp" alt="Thai Massage Lanzarote Logo" class="h-40 w-auto">
+                    <img src="/Logo_sinFondo.webp" alt="Thai Massage Lanzarote Logo" class="h-32">
                 </a>
             </li>
-            <li class="nav-item"><a href="/contact">Contact</a></li>
-            <li class="nav-item"><a href="#location">Location</a></li>
+            <li class="nav-item text-2xl"><a href="/contact">Contact</a></li>
+            <li class="nav-item text-2xl"><a href="#location">Location</a></li>
         </ul>
     </nav>
 
     <!-- Mobile Navigation with Dropdown -->
     <nav class="w-full mx-auto md:hidden">
-        <div class="dropdown flex justify-center py-2">
+        <div class="dropdown flex justify-center">
             <div tabindex="0" role="button" class="logo">
                 <img src="/Logo_sinFondo.webp" alt="Thai Massage Lanzarote Logo" class="h-32 w-auto">
             </div>
@@ -34,29 +34,34 @@
 </header>
 
 <style>
+
     header {
-        background-color: var(--color-primary);
+        background-color: transparent;
     }
+    
+    nav ul {
+        margin: 0;
+        line-height: 1;
+    }
+    
     .nav-item {
         font-weight: 500;
         transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        height: 100%;
     }
     
     .nav-item a {
         color: var(--color-text-primary);
         text-decoration: none;
+        padding: 0;
     }
     
     .nav-item a:hover {
         color: var(--color-atention);
     }
 
-    .logo {
-        padding: 0.1rem;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-    
     .menu li a {
         color: var(--color-text-primary);
         font-weight: 500;

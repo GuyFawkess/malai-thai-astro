@@ -1,0 +1,203 @@
+<section id="services" class="w-full py-12 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2
+      class="text-4xl font-semibold mb-8 text-center text-[var(--color-atention)]"
+    >
+      Our Services
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="card shadow-md mx-auto">
+        <figure>
+          <img
+            src="/thai-massage/IMG_0178.jpeg"
+            alt="Thai Massage"
+            class="w-full h-full object-cover"
+          />
+        </figure>
+        <div class="card-body flex items-center justify-center text-center">
+          <h2 class="card-title text-3xl text-[var(--color-atention)]">
+            Traditional Thai Massage
+          </h2>
+          <p class="text-white text-2xl mt-10">
+            Experience authentic Thai massage techniques that combine
+            acupressure, stretching, and energy work.
+          </p>
+          <div class="card-actions mt-4">
+            <button
+              class="btn btn-xl bg-[var(--color-atention)] text-white border-none"
+              >Book Now</button
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Updated second card -->
+      <div class="card shadow-md mx-auto">
+        <figure>
+          <img
+            src="/oil-massage/IMG_0182.jpeg"
+            alt="Oil Massage"
+            class="w-full h-full object-cover"
+          />
+        </figure>
+        <div class="card-body flex items-center justify-center text-center">
+          <h2 class="card-title text-3xl text-[var(--color-atention)]">
+            Thai Oil Massage
+          </h2>
+          <p class="text-white text-2xl mt-10">
+            A relaxing massage using premium oils to soothe muscles and nourish
+            your skin.
+          </p>
+          <div class="card-actions mt-4">
+            <button
+              class="btn btn-xl bg-[var(--color-atention)] text-white border-none"
+              >Book Now</button
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Updated third card -->
+      <div class="card shadow-md mx-auto">
+        <figure>
+          <img
+            src="/aroma-massage/IMG_0267.jpeg"
+            alt="Aromatherapy Massage"
+            class="w-full h-full object-cover"
+          />
+        </figure>
+        <div class="card-body flex items-center justify-center text-center">
+          <h2 class="card-title text-3xl text-[var(--color-atention)]">
+            Aromatherapy Massage
+          </h2>
+          <p class="text-white text-2xl mt-10">
+            Combines the power of essential oils with therapeutic massage
+            techniques.
+          </p>
+          <div class="card-actions mt-4">
+            <button
+              class="btn btn-xl bg-[var(--color-atention)] text-white border-none"
+              >Book Now</button
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Updated fourth card -->
+      <div class="card shadow-md mx-auto">
+        <figure>
+          <img
+            src="/neck-shoulder/IMG_0263.jpeg"
+            alt="Neck & Shoulder Massage"
+            class="w-full h-full object-cover"
+          />
+        </figure>
+        <div class="card-body flex items-center justify-center text-center">
+          <h2 class="card-title text-3xl text-[var(--color-atention)]">
+            Neck & Shoulder Massage
+          </h2>
+          <p class="text-white text-2xl mt-10">
+            Focused treatment to relieve tension in the neck, shoulders, and
+            upper back.
+          </p>
+          <div class="card-actions mt-4">
+            <button
+              class="btn btn-xl bg-[var(--color-atention)] text-white border-none"
+              >Book Now</button
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Updated fifth card -->
+      <div
+        class="card shadow-md md:col-span-2 mx-auto"
+      >
+        <figure>
+          <img
+            src="/leg-&-feet/IMG_0186.jpeg"
+            alt="Foot Massage"
+            class="w-full h-full object-cover"
+          />
+        </figure>
+        <div class="card-body flex items-center justify-center text-center">
+          <h2 class="card-title text-3xl text-[var(--color-atention)]">
+            Foot Massage
+          </h2>
+          <p class="text-white text-2xl mt-10">
+            Reflexology-inspired massage targeting pressure points in the feet
+            to promote overall wellness.
+          </p>
+          <div class="card-actions mt-4">
+            <button
+              class="btn btn-xl bg-[var(--color-atention)] text-white border-none"
+              >Book Now</button
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 500px; /* Fixed height for all cards */
+    max-width: 400px;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .card-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.5rem;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card:hover .card-body {
+    opacity: 1;
+  }
+
+  figure {
+    height: 100%;
+    margin: 0;
+  }
+
+  /* Mobile styles - show text but with transparent background */
+  @media (max-width: 768px) {
+    .card-body {
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 1;
+    }
+  }
+</style>
