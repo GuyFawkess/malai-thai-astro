@@ -1,0 +1,114 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const services = await getCollection("services");
+  return services.map((service) => ({
+    params: { id: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+const { data } = service;
+const { title, img } = data;
+
+const {Content} = await render(service);
+
+// Generate additional image paths based on the service slug
+// This assumes you have images named: service-slug-1.jpg, service-slug-2.jpg, etc.
+const additionalImages = [
+  `/services/${service.slug}-1.jpg`,
+  `/services/${service.slug}-2.jpg`,
+  `/services/${service.slug}-3.jpg`,
+];
+---
+
+<Layout title={title}>
+  <div class="container mx-auto px-4 py-16 max-w-6xl">
+    <!-- Hero section with main image and title -->
+    <div class="flex flex-col items-center mb-12">
+      <h1 class="text-4xl font-bold text-[var(--color-atention)] mb-8 text-center">{title}</h1>
+      <img src={`${img}`} alt={title} class="rounded-lg shadow-lg w-full max-w-2xl h-auto" />
+    </div>
+    
+    <!-- Content section with alternating text and images -->
+    <div class="content-with-images">
+      <Content />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  /* Style for paragraphs in the content */
+  .content-with-images :global(p) {
+    color: var(--color-deep-charcoal);
+    font-size: 1.125rem;
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+
+  /* Create alternating layout for paragraphs */
+  .content-with-images :global(p:nth-child(odd)) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 2rem;
+  }
+
+  .content-with-images :global(p:nth-child(even)) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-left: 2rem;
+  }
+
+  /* Add responsive design for different screen sizes */
+  @media (min-width: 768px) {
+    .content-with-images :global(p:nth-child(odd)),
+    .content-with-images :global(p:nth-child(even)) {
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .content-with-images :global(p:nth-child(odd))::after {
+      content: "";
+      display: block;
+      width: 300px;
+      height: 200px;
+      background-image: var(--bg-image);
+      background-size: cover;
+      background-position: center;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .content-with-images :global(p:nth-child(even))::before {
+      content: "";
+      display: block;
+      width: 300px;
+      height: 200px;
+      background-image: var(--bg-image);
+      background-size: cover;
+      background-position: center;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .content-with-images :global(p:nth-child(1))::after {
+      --bg-image: url('/services/${service.slug}-1.jpg');
+    }
+
+    .content-with-images :global(p:nth-child(2))::before {
+      --bg-image: url('/services/${service.slug}-2.jpg');
+    }
+
+    .content-with-images :global(p:nth-child(3))::after {
+      --bg-image: url('/services/${service.slug}-3.jpg');
+    }
+  }
+</style>
