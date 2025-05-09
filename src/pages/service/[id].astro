@@ -1,6 +1,5 @@
 ---
-import type { GetStaticPaths } from "astro";
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
@@ -12,103 +11,49 @@ export async function getStaticPaths() {
 }
 
 const { service } = Astro.props;
-const { data } = service;
-const { title, img } = data;
-
-const {Content} = await render(service);
-
-// Generate additional image paths based on the service slug
-// This assumes you have images named: service-slug-1.jpg, service-slug-2.jpg, etc.
-const additionalImages = [
-  `/services/${service.slug}-1.jpg`,
-  `/services/${service.slug}-2.jpg`,
-  `/services/${service.slug}-3.jpg`,
-];
+const { data, slug } = service;
+// Debug: log the slug for the detail page
+console.log('DetailPage slug:', slug);
+const { title, img, images = [], paragraphs = [] } = data;
 ---
 
 <Layout title={title}>
   <div class="container mx-auto px-4 py-16 max-w-6xl">
-    <!-- Hero section with main image and title -->
-    <div class="flex flex-col items-center mb-12">
-      <h1 class="text-4xl font-bold text-[var(--color-atention)] mb-8 text-center">{title}</h1>
-      <img src={`${img}`} alt={title} class="rounded-lg shadow-lg w-full max-w-2xl h-auto" />
-    </div>
-    
-    <!-- Content section with alternating text and images -->
-    <div class="content-with-images">
-      <Content />
+    <h1
+      class="text-4xl font-bold text-[var(--color-atention)] mb-12 text-center"
+    >
+      {title}
+    </h1>
+
+    <div class="flex flex-col gap-16">
+      {
+        paragraphs.map((text, index) => {
+          const isFirst = index === 0;
+          const isEven = index % 2 === 1;
+          const imageUrl = isFirst ? img : images[index - 1];
+
+          if (!imageUrl) return null;
+
+          return (
+            <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+              <div
+                class={`w-full h-78 rounded-lg shadow-md ${isEven ? "md:order-1" : "md:order-none"}`}
+              >
+                {isFirst ? (
+                  <img transition:name={`img-${slug}`} src={imageUrl} class="h-full w-full object-cover rounded-lg" alt="img-massages" />
+                ) : (
+                  <img src={imageUrl} class="h-full w-full object-cover rounded-lg" alt="img-massages" />
+                )}
+              </div>
+              <div
+                class={`mt-10 md:mt-0 text-2xl text-[var(--color-deep-charcoal)] ${isEven ? "md:order-none" : "md:order-1"}`}
+              >
+                <p>{text}</p>
+              </div>
+            </div>
+          );
+        })
+      }
     </div>
   </div>
 </Layout>
-
-<style>
-  /* Style for paragraphs in the content */
-  .content-with-images :global(p) {
-    color: var(--color-deep-charcoal);
-    font-size: 1.125rem;
-    line-height: 1.75;
-    margin-bottom: 2rem;
-    max-width: 100%;
-  }
-
-  /* Create alternating layout for paragraphs */
-  .content-with-images :global(p:nth-child(odd)) {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-right: 2rem;
-  }
-
-  .content-with-images :global(p:nth-child(even)) {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding-left: 2rem;
-  }
-
-  /* Add responsive design for different screen sizes */
-  @media (min-width: 768px) {
-    .content-with-images :global(p:nth-child(odd)),
-    .content-with-images :global(p:nth-child(even)) {
-      flex-direction: row;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .content-with-images :global(p:nth-child(odd))::after {
-      content: "";
-      display: block;
-      width: 300px;
-      height: 200px;
-      background-image: var(--bg-image);
-      background-size: cover;
-      background-position: center;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .content-with-images :global(p:nth-child(even))::before {
-      content: "";
-      display: block;
-      width: 300px;
-      height: 200px;
-      background-image: var(--bg-image);
-      background-size: cover;
-      background-position: center;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .content-with-images :global(p:nth-child(1))::after {
-      --bg-image: url('/services/${service.slug}-1.jpg');
-    }
-
-    .content-with-images :global(p:nth-child(2))::before {
-      --bg-image: url('/services/${service.slug}-2.jpg');
-    }
-
-    .content-with-images :global(p:nth-child(3))::after {
-      --bg-image: url('/services/${service.slug}-3.jpg');
-    }
-  }
-</style>

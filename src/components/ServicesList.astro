@@ -1,6 +1,6 @@
 ---
-import { getCollection } from "astro:content";
 
+import { getCollection } from "astro:content";
 const allServices = await getCollection("services");
 
 const services = allServices.sort(
@@ -12,6 +12,7 @@ const services = allServices.sort(
 <section id="services" class="w-full py-12 px-4">
   <div class="max-w-6xl mx-auto">
     <h2
+      transition:name="services"
       class="text-4xl font-semibold mb-8 text-center text-[var(--color-atention)]"
     >
       Our Services
@@ -21,11 +22,15 @@ const services = allServices.sort(
       {
         services.map((service: { data: any; slug: string }) => {
           const { data, slug } = service;
-          const { title, description, img } = data;
+          // Debug: log the slug for each service
+          console.log('ServiceList slug:', slug);
+          const { title, description, img} = data;
+          console.log(slug)
           return (
             <article class="card shadow-md">
               <figure>
                 <img
+                  transition:name={`img-${slug}`}
                   src={`${img}`}
                   alt={title}
                   class="w-full h-full object-cover"

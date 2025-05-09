@@ -6,6 +6,8 @@ const services = defineCollection({
     img: z.string(),
     description: z.string(),
     sortOrder: z.number().default(999),
+    images: z.array(z.string()).optional(),
+    paragraphs: z.array(z.string()).optional(),
   }),
 });
 
