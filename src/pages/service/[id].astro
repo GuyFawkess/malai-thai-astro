@@ -39,7 +39,7 @@ const { title, img, images = [], paragraphs = [], prices = [] } = data;
                 class={`w-full h-78 rounded-lg shadow-md ${isEven ? "md:order-1" : "md:order-none"}`}
               >
                 {isFirst ? (
-                  <img transition:name={`img-${slug}`} src={imageUrl} class="h-full w-full object-cover rounded-lg" alt="img-massages" />
+                  <img transition:name={`img-${slug}`} data-astro-prefetch src={imageUrl} class="h-full w-full object-cover rounded-lg" alt="img-massages" />
                 ) : (
                   <img src={imageUrl} class="h-full w-full object-cover rounded-lg" alt="img-massages" />
                 )}

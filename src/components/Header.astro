@@ -7,9 +7,9 @@
         <ul class="flex items-center justify-center space-x-8 py-0">
             <li class="btn btn-ghost text-[var(--color-text-primary)] hover:bg-[var(--color-terracotta)] border-none text-lg"><a href="/#about">About us</a></li>
             <li class="btn btn-ghost text-[var(--color-text-primary)] hover:bg-[var(--color-terracotta)] border-none text-lg"><a href="/#services">Services</a></li>
-            <li class="flex items-center justify-center hover:scale-110 transition ease-in-out duration-150">
+            <li  class="flex items-center justify-center hover:scale-110 transition ease-in-out duration-150">
                 <a href="/">
-                    <img src="/logoNav.png" alt="Thai Massage Lanzarote Logo" class="h-24">
+                    <img data-astro-prefetch src="/logoNav.png" alt="Thai Massage Lanzarote Logo" class="h-24">
                 </a>
             </li>
             <li class="btn btn-ghost text-[var(--color-text-primary)] hover:bg-[var(--color-terracotta)] border-none text-lg"><a href="/contact">Contact</a></li>
@@ -20,7 +20,7 @@
     <!-- Mobile Navigation with Dropdown -->
     <nav class="w-full mx-auto md:hidden bg-[var(--color-natural-green)]">
         <div class="dropdown flex justify-center">
-            <div tabindex="0" role="button" class="logo">
+            <div data-astro-prefetch tabindex="0" role="button" class="logo">
                 <img src="/logoNav.png" alt="Thai Massage Lanzarote Logo" class="h-28 w-auto">
             </div>
             <ul tabindex="0" class="dropdown-content menu bg-[var(--color-secondary)] rounded-box z-[100] w-52 p-2 shadow-md mt-32">

@@ -1,13 +1,18 @@
 <div
-  class="relative hero min-h-screen bg-[url(/heroSinTexto.png)]"
-  
+  data-astro-prefetch
+  class="relative hero min-h-[100dvh] bg-[url(/heroSinTexto.png)]"
 >
   <div class="absolute inset-0 bg-[var(--color-natural-green)]/40"></div>
   <div class="hero-content text-neutral-content text-center">
     <div class="max-w-xl">
       <h1 class="mb-5 text-6xl font-bold text-white">Welcome!</h1>
-      <p class="mb-6 text-3xl text-white">"Where tension melts and serenity begins"</p>
-      <button class="btn btn-xl bg-[var(--color-warm-wood)] border-none hover:scale-115 transition ease-in-out duration-150">Book now!</button>
+      <p class="mb-6 text-3xl text-white">
+        "Where tension melts and serenity begins"
+      </p>
+      <button
+        class="text-white btn btn-xl bg-[var(--color-warm-wood)] border-none hover:scale-115 transition ease-in-out duration-150"
+        >Book now!</button
+      >
     </div>
   </div>
 </div>
