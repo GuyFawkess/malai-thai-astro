@@ -1,13 +1,49 @@
 ---
+import { Icon } from "astro-icon/components";
 ---
 
 <footer class="w-full">
-    <div class="bg-[var(--color-natural-green)] min-h-24">
-        <ul class="h-24 flex items-center justify-center space-x-8 py-0">
-            <li class="nav-item text-2xl transition duration-200 ease-in-out hover:scale-105">Instagram</li>
-            <li class="nav-item text-2xl transition duration-200 ease-in-out hover:scale-105">Facebook</li>
-            <li class="nav-item text-2xl transition duration-200 ease-in-out hover:scale-105">WhatsApp</li>
-        </ul>
-        <p class="footer sm:footer-horizontal footer-center text-base-content">Copyright © {new Date().getFullYear()} - All right reserved by nombre de la empresa</p>
-    </div>
+  <div class="bg-[var(--color-natural-green)]">
+    <ul class="h-18 flex items-center justify-center space-x-8 py-0">
+      <li class="nav-item">
+        <a href="https://www.instagram.com/malaithaimassage89?" target="_blank" rel="noopener noreferrer">
+          <Icon
+            name="instagram"
+            class="text-3xl text-[var(--color-warm-sand)] transition duration-200 ease-in-out hover:scale-125 hover:text-[var(--color-terracotta)]"
+          />
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="https://www.facebook.com/malaithaimassagelanzarote" target="_blank" rel="noopener noreferrer">
+          <Icon
+            name="facebook3"
+            class="text-3xl text-[var(--color-warm-sand)] transition duration-200 ease-in-out hover:scale-125 hover:text-[var(--color-terracotta)]"
+          />
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          href="https://wa.me/34600111222"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon
+            name="whatsapp"
+            class="text-3xl text-[var(--color-warm-sand)] transition duration-200 ease-in-out hover:scale-125 hover:text-[var(--color-terracotta)]"
+          />
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="mailto:malaithai89@gmail.com" target="_blank" rel="noopener noreferrer">
+          <Icon
+            name="gmail2"
+            class="text-3xl text-[var(--color-warm-sand)] transition duration-200 ease-in-out hover:scale-125 hover:text-[var(--color-terracotta)]"
+          />
+        </a>
+      </li>
+    </ul>
+    <p class="footer sm:footer-horizontal footer-center text-base-content">
+      Copyright © {new Date().getFullYear()} - All right reserved by Malai Thai Massage
+    </p>
+  </div>
 </footer>
