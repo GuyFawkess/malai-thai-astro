@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import PriceList from "../../components/PriceList.astro";
 
 export async function getStaticPaths() {
   const services = await getCollection("services");
@@ -12,15 +13,13 @@ export async function getStaticPaths() {
 
 const { service } = Astro.props;
 const { data, slug } = service;
-// Debug: log the slug for the detail page
-console.log('DetailPage slug:', slug);
-const { title, img, images = [], paragraphs = [] } = data;
+const { title, img, images = [], paragraphs = [], prices = [] } = data;
 ---
 
 <Layout title={title}>
   <div class="container mx-auto px-4 py-16 max-w-6xl">
     <h1
-      class="text-4xl font-bold text-[var(--color-atention)] mb-12 text-center"
+      class="text-3xl font-semibold text-[var(--color-terracotta)] mb-12 text-center"
     >
       {title}
     </h1>
@@ -46,7 +45,7 @@ const { title, img, images = [], paragraphs = [] } = data;
                 )}
               </div>
               <div
-                class={`mt-10 md:mt-0 text-2xl text-[var(--color-deep-charcoal)] ${isEven ? "md:order-none" : "md:order-1"}`}
+                class={`mt-10 md:mt-0 text-xl text-[var(--color-deep-charcoal)] ${isEven ? "md:order-none" : "md:order-1"}`}
               >
                 <p>{text}</p>
               </div>
@@ -55,5 +54,10 @@ const { title, img, images = [], paragraphs = [] } = data;
         })
       }
     </div>
+    {prices.length > 0 && (
+      <div class="mt-16">
+        <PriceList prices={prices} />
+      </div>
+    )}
   </div>
 </Layout>
