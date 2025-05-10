@@ -12,6 +12,11 @@ paragraphs:
   - Using precise thumb and finger techniques, the therapist stimulates these points to encourage natural healing, improve circulation, and support overall balance. This type of massage not only soothes tired feet but can also alleviate tension throughout the entire body.
   - The treatment is typically performed while you're comfortably seated or reclining, making it a convenient option for a quick yet effective wellness boost. Whether you've been on your feet all day or simply need a moment of calm, this massage leaves you feeling grounded, refreshed, and recharged.
   - Foot Massage is perfect for reducing stress, improving sleep quality, and supporting your body’s internal systems—all through the simple, powerful care of your feet.
+prices:
+  - duration: "30 min"
+    price: 40
+  - duration: "60 min"
+    price: 65
 ---
 
 

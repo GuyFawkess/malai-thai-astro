@@ -12,4 +12,11 @@ paragraphs:
   - Unlike Western massage styles, Thai massage is performed on a padded mat on the floor, and clients remain fully clothed in comfortable attire. During the session, the therapist uses their hands, elbows, knees, and even feet to apply rhythmic pressure and guide your body through a series of yoga-like stretches.
   - This technique not only eases muscular tension but also improves joint mobility, posture, and internal balance. It's especially beneficial for people with sedentary lifestyles, athletes, or anyone seeking both physical and mental rejuvenation.
   - Whether you're looking to reduce stress, increase flexibility, or simply indulge in a moment of self-care, Traditional Thai Massage offers a deeply restorative experience for body and mind.
+prices:
+  - duration: "60 min"
+    price: 65
+  - duration: "90 min"
+    price: 90
+  - duration: "120 min"
+    price: 120
 ---

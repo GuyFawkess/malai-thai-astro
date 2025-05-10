@@ -1,5 +1,4 @@
 ---
-
 import { getCollection } from "astro:content";
 const allServices = await getCollection("services");
 
@@ -13,7 +12,7 @@ const services = allServices.sort(
   <div class="max-w-6xl mx-auto">
     <h2
       transition:name="services"
-      class="text-4xl font-semibold mb-8 text-center text-[var(--color-atention)]"
+      class="text-3xl font-semibold mb-8 text-center text-[var(--color-terracotta)]"
     >
       Our Services
     </h2>
@@ -22,12 +21,9 @@ const services = allServices.sort(
       {
         services.map((service: { data: any; slug: string }) => {
           const { data, slug } = service;
-          // Debug: log the slug for each service
-          console.log('ServiceList slug:', slug);
-          const { title, description, img} = data;
-          console.log(slug)
+          const { title, description, img } = data;
           return (
-            <article class="card shadow-md">
+            <article class="card shadow-xl hover:scale-105 transition delay-100 duration-100 ease-in">
               <figure>
                 <img
                   transition:name={`img-${slug}`}
@@ -37,14 +33,14 @@ const services = allServices.sort(
                 />
               </figure>
               <div class="card-body flex items-center justify-center text-center">
-                <h2 class="card-title text-3xl text-[var(--color-atention)]">
+                <h2 class="card-title text-2xl text-[var(--color-atention)]">
                   {title}
                 </h2>
-                <p class="text-white text-2xl mt-10">{description}</p>
+                <p class="text-white text-lg mt-10">{description}</p>
                 <div class="card-actions mt-4">
                   <a
                     href={`/service/${slug}`}
-                    class="btn btn-xl bg-[var(--color-atention)] text-white border-none"
+                    class="btn btn-xl bg-[var(--color-terracotta)] text-[var(--color-warm-sand)] border-none hover:scale-115 transition duration-200 ease-in-out "
                   >
                     More info
                   </a>
@@ -62,8 +58,8 @@ const services = allServices.sort(
         overflow: hidden;
         border-radius: 0.5rem;
         width: 100%;
-        height: 500px; /* Fixed height for all cards */
-        max-width: 400px;
+        height: 400px; 
+        max-width: 300px;
         flex: 0 0 auto;
       }
 
@@ -90,7 +86,7 @@ const services = allServices.sort(
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(23, 52, 2, 0.7);
         z-index: 1;
         opacity: 0;
         transition: opacity 0.3s ease;
@@ -128,7 +124,7 @@ const services = allServices.sort(
       /* Mobile styles - show text but with transparent background */
       @media (max-width: 768px) {
         .card-body {
-          background: rgba(0, 0, 0, 0.5);
+          background: rgba(23, 52, 2, 0.7);
           opacity: 1;
         }
       }
