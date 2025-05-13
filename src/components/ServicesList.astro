@@ -8,7 +8,7 @@ const services = allServices.sort(
 );
 ---
 
-<section id="services" class="w-full py-12 px-4">
+<section id="services" class="w-full py-12 px-4 shadow-lg">
   <div class="max-w-6xl mx-auto">
     <h2
       transition:name="services"
@@ -40,7 +40,7 @@ const services = allServices.sort(
                 <div class="card-actions mt-4">
                   <a
                     href={`/service/${slug}`}
-                    class="btn btn-xl bg-[var(--color-terracotta)] text-[var(--color-warm-sand)] border-none hover:scale-115 transition duration-200 ease-in-out "
+                    class="btn btn-lg bg-[var(--color-terracotta)] text-[var(--color-warm-sand)] border-none hover:scale-115 transition duration-200 ease-in-out "
                   >
                     More info
                   </a>
@@ -75,7 +75,7 @@ const services = allServices.sort(
       @media (min-width: 1024px) {
         .card {
           width: calc(33.333% - 1.5rem);
-          max-width: 400px;
+          max-width: 350px;
         }
       }
 
