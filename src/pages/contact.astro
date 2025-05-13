@@ -1,9 +1,24 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Location from "../components/Location.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-
 <Layout title="contact">
-    contactanos
+  <main class="min-h-dvh w-full py-10 px-4 text-center shadow-md">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-3xl font-bold mb-8 text-[var(--color-terracotta)]">
+        Contact me
+      </h1>
+      <div class="flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:block w-full md:w-1/2 h-full mx-auto text-left">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quisquam, delectus nostrum corrupti deserunt consectetur iusto cumque, non tenetur impedit eius ipsam dolorum suscipit quos, est ea incidunt cupiditate? Quos!</p>
+        </div>
+        <div class="w-full md:-1/2 text-left">
 
+        </div>
+
+      </div>
+    </div>
+</main>
+<Location />
 </Layout>

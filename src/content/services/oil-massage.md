@@ -13,10 +13,10 @@ paragraphs:
   - Unlike traditional Thai massage, this version offers a more fluid and tranquil experience, making it ideal for anyone who prefers a gentler approach. The oils not only help reduce friction during the massage but also hydrate the skin, leaving it soft, smooth, and lightly scented.
   - Thai Oil Massage is especially recommended for stress relief, muscle fatigue, and overall well-being. It's a perfect choice if you want to unwind, disconnect, and enjoy a moment of peace and care.
 prices:
+  - duration: "30 min"
+    price: 40
   - duration: "60 min"
     price: 65
   - duration: "90 min"
-    price: 90
-  - duration: "120 min"
-    price: 120
+    price: 95
 ---

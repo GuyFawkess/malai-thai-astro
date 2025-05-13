@@ -13,8 +13,10 @@ paragraphs:
   - The massage is performed in a tranquil setting to enhance the sensory experience, allowing the aromas to work in harmony with the massage to calm the nervous system and restore emotional balance.
   - Aromatherapy Massage is ideal for those seeking a deeply nurturing experience that addresses both physical tension and emotional well-being, leaving you refreshed, centered, and renewed.
 prices:
+  - duration: "30 min"
+    price: 40
   - duration: "60 min"
-    price: 70
+    price: 65
   - duration: "90 min"
     price: 95
 ---
