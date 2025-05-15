@@ -22,8 +22,8 @@ const baseUrl = currentLang === 'en' ? '/' : '/es/';
             <li class="btn btn-ghost text-[var(--color-text-primary)] hover:bg-[var(--color-terracotta)] border-none text-lg"><a href={currentLang === 'en' ? "/contact" : "/es/contacto"}>{t.nav.contact}</a></li>
             <li class="btn btn-ghost text-[var(--color-text-primary)] hover:bg-[var(--color-terracotta)] border-none text-lg"><a href={`${baseUrl}#location`}>{t.nav.location}</a></li>
             <li>
-                <LanguageSwitcher currentLang={currentLang} />
             </li>
+            <LanguageSwitcher currentLang={currentLang} />
         </ul>
     </nav>
 
@@ -38,10 +38,10 @@ const baseUrl = currentLang === 'en' ? '/' : '/es/';
                 <li><a transition:name="services" href={`${baseUrl}#services`} class="py-3">{t.nav.services}</a></li>
                 <li><a href={currentLang === 'en' ? "/contact" : "/es/contacto"} class="py-3">{t.nav.contact}</a></li>
                 <li><a href={`${baseUrl}#location`} class="py-3">{t.nav.location}</a></li>
+                <div class="navbar-end">
+                    <LanguageSwitcher currentLang={currentLang} />
+                </div>
             </ul>
-            <div class="navbar-end">
-                <LanguageSwitcher currentLang={currentLang} />
-            </div>
         </div>
     </nav>
 </header>
