@@ -8,10 +8,18 @@ import icon from 'astro-icon';
 export default defineConfig({
   prefetch: true,
   server: {
-    allowedHosts: ['social-coins-lose.loca.lt']
+    allowedHosts: ['slimy-rooms-hammer.loca.lt']
   },
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [icon()]
+  integrations: [icon()],
+  // Add i18n routing
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'es'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  }
 });

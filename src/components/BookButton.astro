@@ -1,4 +1,13 @@
+---
+import { useTranslations } from "../i18n/utils";
+
+const { currentLang = 'en' } = Astro.props;
+const t = useTranslations(currentLang)
+---
+
+<a href={currentLang === 'en' ? "/contact" : "/es/contacto"}>
 <button
-class="text-white my-10 btn btn-xl bg-[var(--color-warm-wood)] border-none hover:scale-110 transition ease-in-out duration-300"
->Book now!</button
+class="text-white my-8 btn btn-xl bg-[var(--color-warm-wood)] border-none hover:scale-110 transition ease-in-out duration-300"
+>{t.buttons.book}</button
 >
+</a>

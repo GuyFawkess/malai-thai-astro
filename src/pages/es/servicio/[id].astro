@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import PriceList from "../../components/PriceList.astro";
-import BookButton from '../../components/BookButton.astro';
+import Layout from "../../../layouts/Layout.astro";
+import PriceList from "../../../components/PriceList.astro";
+import BookButton from '../../../components/BookButton.astro';
 
 export async function getStaticPaths() {
   const services = await getCollection("services");
@@ -14,8 +14,11 @@ export async function getStaticPaths() {
 
 const { service } = Astro.props;
 const { data, slug } = service;
-const { title, img, images = [], paragraphs = [], prices = [] } = data;
-const currentLang = 'en';
+// Use Spanish content if available, fall back to English
+const title = data.title_es || data.title;
+const paragraphs = data.paragraphs_es || data.paragraphs || [];
+const { img, images = [], prices = [] } = data;
+const currentLang = 'es';
 ---
 
 <Layout title={title}>
@@ -46,7 +49,7 @@ const currentLang = 'en';
                 ) : (
                   <img 
                     data-animate="fade-up" 
-                    data-duration="1500"
+                    data-duration="1000"
                     src={imageUrl} 
                     class="opacity-0 translate-y-10 h-full w-full object-cover rounded-lg" 
                     alt="img-massages" 
@@ -69,5 +72,5 @@ const currentLang = 'en';
       </div>
     )}
   </div>
-  <BookButton />
+  <BookButton currentLang={currentLang} />
 </Layout>

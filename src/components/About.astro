@@ -1,53 +1,56 @@
+---
+import { useTranslations } from "../i18n/utils";
+
+const { currentLang = "en" } = Astro.props;
+const t = useTranslations(currentLang);
+---
+
 <section
   id="about"
   class="w-full py-12 px-4 bg-[var(--color-warm-sand)] text-center shadow-sm"
 >
   <div class="max-w-6xl mx-auto">
     <h1 class="text-3xl font-semibold mb-8 text-[var(--color-terracotta)]">
-      About us
+      {t.about.title}
     </h1>
     <div class="flex flex-col md:flex-row gap-8 items-center">
       <img
+        data-duration="1000"
+        data-animate="fade-left"
         src="/aboutPic.png"
         alt="Thai Massage Lanzarote"
-        class="rounded-lg hidden md:block w-full md:w-1/2 mr-7"
+        class="opacity-0 -translate-x-10 rounded-lg hidden md:block w-full md:w-1/2 mr-7"
       />
 
-      <div class="w-full md:w-1/2 text-left">
+      <div
+        data-duration="1000"
+        data-animate="fade-up"
+        class="opacity-0 translate-y-10 w-full md:w-1/2 text-left"
+      >
         <h2 class="text-xl font-bold mb-4 text-[var(--color-atention)]">
-          Experience the Art of Traditional Thai Massage
+          {t.about.subtitle}
         </h2>
 
         <p class="mb-4 leading-relaxed">
-          At <span class="font-medium">Malai Thai Massage Lanzarote</span>, we
-          bring you the authentic art of traditional Thai massage, founded by
-          native Thai experts as the first Thai-owned massage spa in Lanzarote.
+          {t.about.intro}
         </p>
 
         <p class="mb-4 leading-relaxed">
-          Our mission is to provide you with a deeply relaxing and rejuvenating
-          experience in a serene, luxurious, and welcoming atmosphere.
+          {t.about.mission}
         </p>
 
-        <p class="mb-4 leading-relaxed">Our services include:</p>
+        <p class="mb-4 leading-relaxed">{t.about.services}</p>
 
         <ul class="list-disc pl-6 mb-4">
-          <li>Traditional Thai Massage</li>
-          <li>Thai Oil Massage</li>
-          <li>Aromatherapy Massage</li>
-          <li>Foot Massage</li>
-          <li>Neck-Shoulder-Back Massage</li>
+          {t.about.servicesList.map((service) => <li>{service}</li>)}
         </ul>
 
         <p class="leading-relaxed">
-          All designed to relieve tension, stimulate blood circulation, and
-          restore balance to both body and mind.
+          {t.about.benefits}
         </p>
 
         <p class="mt-4 italic">
-          Experience the true essence of Thai healing and let us take care of
-          your well-being with expertise from the very roots of Thai tradition
-          here in Lanzarote.
+          {t.about.closing}
         </p>
       </div>
     </div>

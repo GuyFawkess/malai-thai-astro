@@ -1,45 +1,45 @@
 ---
-import Location from "../components/Location.astro";
-import Layout from "../layouts/Layout.astro";
+import Location from "../../components/Location.astro";
+import Layout from "../../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import { useTranslations } from "../../i18n/utils";
+
+const currentLang = 'es';
+const t = useTranslations(currentLang);
 ---
 
-<Layout title="contact">
+<Layout title="contacto">
   <main class="w-full mb-20 py-10 px-4 text-center">
     <div class="max-w-6xl mx-auto">
       <h1 class="text-3xl font-bold mb-8 text-[var(--color-terracotta)]">
-        Contact me
+        {t.contact.title}
       </h1>
       <div class="flex flex-col md:flex-row gap-10">
         <div class="md:block w-full md:w-1/2 h-full mx-auto text-left">
           <h2
             class="text-xl font-medium mb-4 text-[var(--color-atention)] text-center"
           >
-            Info
+            {t.contact.info}
           </h2>
           <h3 class="mb-3 font-medium">
-            Thank you for your interest in Malai Thai Massage.
+            {t.contact.thankYou}
           </h3>
           <p class="mb-3">
-            Our shop is currently undergoing final preparations, including
-            paperwork and interior design, as we get ready for the grand
-            opening.
+            {t.contact.preparation}
           </p>
           <p class="mb-3">
-            In the meantime, I'm offering a limited number of relaxing and
-            professional Thai massage sessions each day, available from my home.
+            {t.contact.offering}
           </p>
           <p class="mb-3">
-            If you'd like to book a session or learn more, feel free to contact
-            me via any of my contact options<span class="hidden md:inline">.</span><span class="md:hidden"> below.</span>
+            {t.contact.bookSession}<span class="hidden md:inline">.</span><span class="md:hidden"> below.</span>
           </p>
-          <p>I look forward to welcoming you soon!</p>
+          <p>{t.contact.lookForward}</p>
         </div>
         <div class="w-full md:w-1/2 text-left h-full">
           <h2
             class="text-xl font-medium mb-4 text-[var(--color-atention)] text-center"
           >
-            Where to reach me
+            {t.contact.reachMe}
           </h2>
           <ul class="flex flex-col space-y-8 w-full">
             <li class="flex items-center">
@@ -111,5 +111,5 @@ import { Icon } from "astro-icon/components";
       </div>
     </div>
   </main>
-  <Location />
+  <Location currentLang={currentLang} />
 </Layout>

@@ -3,41 +3,57 @@ import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { getLanguageFromURL, useTranslations } from "../i18n/utils";
+
 interface Props {
-	title: string;
+  title: string;
 }
 
-const {title} = Astro.props;
+const { title } = Astro.props;
+const currentLang = getLanguageFromURL(Astro.url);
+const t = useTranslations(currentLang);
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/logoNav.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<ClientRouter />
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
-	</head>
-	<body>
-		<Header />
-		<slot />
-		<Footer />
-	</body>
+<html lang={currentLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/logoNav.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ClientRouter />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Add alternate language links for SEO -->
+    {currentLang === 'en' && <link rel="alternate" hreflang="es" href={`https://your-domain.com${Astro.url.pathname.replace(/^\/(en\/)?/, '/es/')}`} />}
+    {currentLang === 'es' && <link rel="alternate" hreflang="en" href={`https://your-domain.com${Astro.url.pathname.replace(/^\/(es\/)?/, '/')}`} />}
+    <link rel="alternate" hreflang="x-default" href={`https://your-domain.com${Astro.url.pathname.replace(/^\/(en|es)\//, '/')}`} />
+  </head>
+  <body>
+    <Header currentLang={currentLang} />
+    <slot />
+    <Footer currentLang={currentLang} />
+
+    <script src="/scroll-animate.js" defer></script>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		background-color: #f4f1eb;
-		font-family: 'Montserrat', sans-serif;
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		justify-items: center;
-		color: black;
-	}
+  html,
+  body {
+    background-color: #f4f1eb;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    color: black;
+    overflow-x: hidden;
+  }
+  p {
+    color: var(--color-deep-charcoal);
+  }
 </style>
-

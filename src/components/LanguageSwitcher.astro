@@ -1,0 +1,20 @@
+---
+import { languages } from '../i18n/config';
+import { getAlternateURLs } from '../i18n/utils';
+
+const { currentLang } = Astro.props;
+const currentPath = Astro.url.pathname;
+const alternateURLs = getAlternateURLs(currentPath, currentLang);
+---
+
+<div class="language-switcher">
+  {Object.entries(languages).map(([lang, label]) => (
+    <a 
+      href={alternateURLs[lang as keyof typeof alternateURLs]}
+      class={`px-2 py-1 rounded ${currentLang === lang ? 'font-bold text-[var(--color-terracotta)]' : 'text-[var(--color-deep-charcoal)]'}`}
+      aria-label={`Switch to ${label}`}
+    >
+      {lang.toUpperCase()}
+    </a>
+  ))}
+</div>

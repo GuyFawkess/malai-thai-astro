@@ -1,5 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
+import { useTranslations } from "../i18n/utils";
+
+const { currentLang } = Astro.props;
+const t = useTranslations(currentLang);
 ---
 
 <footer class="w-full">
@@ -23,7 +27,7 @@ import { Icon } from "astro-icon/components";
       </li>
       <li class="nav-item">
         <a
-          href="https://wa.me/34600111222"
+          href="https://wa.me/34628125302"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -43,7 +47,7 @@ import { Icon } from "astro-icon/components";
       </li>
     </ul>
     <p class="footer sm:footer-horizontal footer-center text-base-content">
-      Copyright © {new Date().getFullYear()} - All right reserved by Malai Thai Massage
+      {t.footer.copyright.replace('{year}', new Date().getFullYear())}
     </p>
   </div>
 </footer>

@@ -1,7 +1,11 @@
 ---
 import { getCollection } from "astro:content";
-const allServices = await getCollection("services");
+import { useTranslations } from "../i18n/utils";
 
+const { currentLang = 'en' } = Astro.props;
+const t = useTranslations(currentLang);
+
+const allServices = await getCollection("services");
 const services = allServices.sort(
   (a: { data: { sortOrder?: number } }, b: { data: { sortOrder?: number } }) =>
     (a.data.sortOrder || 999) - (b.data.sortOrder || 999)
@@ -14,16 +18,25 @@ const services = allServices.sort(
       transition:name="services"
       class="text-3xl font-semibold mb-8 text-center text-[var(--color-terracotta)]"
     >
-      Our Services
+      {t.service.title}
     </h2>
 
     <div class="flex flex-wrap justify-center gap-8">
       {
         services.map((service: { data: any; slug: string }) => {
           const { data, slug } = service;
-          const { title, description, img } = data;
+          // Use language-specific content
+          const title = currentLang === 'es' && data.title_es ? data.title_es : data.title;
+          const description = currentLang === 'es' && data.description_es ? data.description_es : data.description;
+          const { img } = data;
+          
+          // Create the correct URL based on language
+          const serviceUrl = currentLang === 'es' 
+            ? `/es/servicio/${slug}` 
+            : `/service/${slug}`;
+            
           return (
-            <article class="card shadow-xl hover:scale-105 transition delay-100 duration-100 ease-in">
+            <article data-duration="700" data-animate="zoom-in" class="opacity-0 scale-90 card shadow-xl">
               <figure>
                 <img
                   transition:name={`img-${slug}`}
@@ -39,10 +52,10 @@ const services = allServices.sort(
                 <p class="text-white text-lg mt-10">{description}</p>
                 <div class="card-actions mt-4">
                   <a
-                    href={`/service/${slug}`}
+                    href={serviceUrl}
                     class="btn btn-lg bg-[var(--color-terracotta)] text-[var(--color-warm-sand)] border-none hover:scale-115 transition duration-200 ease-in-out "
                   >
-                    More info
+                    {t.service.button}
                   </a>
                 </div>
               </div>
