@@ -1,14 +1,14 @@
 ---
 title: "Thai Oil Massage"
 title_es: "Masaje Tailandés con Aceite"
-img: "/oil-massage/IMG_0182.jpeg"
+img: "/oil-massage/IMG_0182.webp"
 description: "A relaxing massage using premium oils to soothe muscles and nourish your skin."
 description_es: "Un masaje relajante que utiliza aceites premium para calmar los músculos y nutrir tu piel."
 sortOrder: 2
 images:
-  - /oil-massage/IMG_0183.jpeg
-  - /oil-massage/IMG_0184.jpeg
-  - /oil-massage/IMG_0258.jpeg
+  - /oil-massage/IMG_0183.webp
+  - /oil-massage/IMG_0184.webp
+  - /oil-massage/IMG_0258.webp
 paragraphs:
   - "Thai Oil Massage blends the therapeutic techniques of traditional Thai massage with the soothing properties of aromatic oils. This style is perfect for those seeking both physical relief and deep relaxation."
   - "The treatment is performed on a massage table using long, flowing strokes, gentle kneading, and acupressure, all while nourishing oils are worked into the skin. The therapist adapts the pressure to your comfort, helping to release muscle tension and calm the nervous system."

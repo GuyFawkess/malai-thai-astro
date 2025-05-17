@@ -1,14 +1,14 @@
 ---
 title: "Neck & Shoulder Massage"
 title_es: "Masaje de Cuello y Hombros"
-img: "/neck-shoulder/IMG_0263.jpeg"
+img: "/neck-shoulder/IMG_0263.webp"
 description: "Focused treatment to relieve tension in the neck, shoulders, and upper back."
 description_es: "Tratamiento enfocado para aliviar la tensión en el cuello, hombros y parte superior de la espalda."
 sortOrder: 4
 images:
-  - /neck-shoulder/IMG_0256.jpeg
-  - /neck-shoulder/IMG_0260.jpeg
-  - /neck-shoulder/IMG_0264.jpeg
+  - /neck-shoulder/IMG_0256.webp
+  - /neck-shoulder/IMG_0260.webp
+  - /neck-shoulder/IMG_0264.webp
 paragraphs:
   - "Neck & Shoulder Massage is a targeted therapy designed to release built-up tension in the upper body, especially in areas commonly affected by stress, posture, and daily strain."
   - "This treatment focuses on the neck, shoulders, and upper back—regions that often carry the weight of long working hours, desk jobs, or emotional stress. Through a combination of kneading, pressure point work, and gentle stretching, the massage helps loosen tight muscles and improve blood flow."

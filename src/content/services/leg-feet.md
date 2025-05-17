@@ -1,14 +1,14 @@
 ---
 title: "Leg & Feet Massage"
 title_es: "Masaje de Piernas y Pies"
-img: "/leg-&-feet/IMG_0186.jpeg"
+img: "/leg-&-feet/IMG_0186.webp"
 description: "Reflexology-inspired massage targeting pressure points in the feet to promote overall wellness."
 description_es: "Masaje inspirado en la reflexología que se enfoca en puntos de presión en los pies para promover el bienestar general."
 sortOrder: 5
 images:
-  - /leg-&-feet/IMG_0181.jpeg
-  - /leg-&-feet/IMG_0257.jpeg
-  - /leg-&-feet/IMG_0262.jpeg
+  - /leg-&-feet/IMG_0181.webp
+  - /leg-&-feet/IMG_0257.webp
+  - /leg-&-feet/IMG_0262.webp
 paragraphs:
   - "Foot Massage is a deeply relaxing treatment inspired by the principles of reflexology, focusing on the many pressure points located in the feet that correspond to different areas of the body."
   - "Using precise thumb and finger techniques, the therapist stimulates these points to encourage natural healing, improve circulation, and support overall balance. This type of massage not only soothes tired feet but can also alleviate tension throughout the entire body."

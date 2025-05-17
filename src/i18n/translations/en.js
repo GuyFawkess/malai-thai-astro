@@ -29,6 +29,9 @@ export default {
     title: "Our Services",
     button: "More info"
   },
+  prices: {
+    title: "Our Prices",
+  },
   contact: {
     title: "Contact me",
     info: "Info",

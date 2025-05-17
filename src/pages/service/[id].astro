@@ -42,14 +42,26 @@ const currentLang = 'en';
               >
                 <!-- For non-first images that have animations -->
                 {isFirst ? (
-                  <img transition:name={`img-${slug}`} data-astro-prefetch src={imageUrl} class="h-full w-full object-cover rounded-lg" alt="img-massages" />
+                  <img 
+                    transition:name={`img-${slug}`} 
+                    data-astro-prefetch 
+                    src={imageUrl} 
+                    width="600"
+                    height="400"
+                    class="h-full w-full object-cover rounded-lg" 
+                    alt={`Thai massage: ${title}`} 
+                  />
                 ) : (
                   <img 
                     data-animate="fade-up" 
                     data-duration="1500"
                     src={imageUrl} 
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="400"
                     class="opacity-0 translate-y-10 h-full w-full object-cover rounded-lg" 
-                    alt="img-massages" 
+                    alt={`Thai massage: ${title}`} 
                   />
                 )}
               </div>

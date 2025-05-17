@@ -10,15 +10,19 @@ const t = useTranslations(currentLang);
   class="w-full py-12 px-4 bg-[var(--color-warm-sand)] text-center shadow-sm"
 >
   <div class="max-w-6xl mx-auto">
-    <h1 class="text-3xl font-semibold mb-8 text-[var(--color-terracotta)]">
+    <h2 class="text-3xl font-semibold mb-8 text-[var(--color-terracotta)]">
       {t.about.title}
-    </h1>
+    </h2>
     <div class="flex flex-col md:flex-row gap-8 items-center">
       <img
         data-duration="1000"
         data-animate="fade-left"
-        src="/aboutPic.png"
-        alt="Thai Massage Lanzarote"
+        loading="lazy"
+        decoding="async"
+        src="/aboutPic.webp"
+        alt="Thai Massage Lanzarote - Traditional Thai massage techniques"
+        width="600"
+        height="400"
         class="opacity-0 -translate-x-10 rounded-lg hidden md:block w-full md:w-1/2 mr-7"
       />
 
@@ -27,9 +31,9 @@ const t = useTranslations(currentLang);
         data-animate="fade-up"
         class="opacity-0 translate-y-10 w-full md:w-1/2 text-left"
       >
-        <h2 class="text-xl font-bold mb-4 text-[var(--color-atention)]">
+        <h3 class="text-xl font-bold mb-4 text-[var(--color-atention)]">
           {t.about.subtitle}
-        </h2>
+        </h3>
 
         <p class="mb-4 leading-relaxed">
           {t.about.intro}

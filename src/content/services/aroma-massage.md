@@ -1,14 +1,14 @@
 ---
 title: "Aromatherapy Massage"
 title_es: "Masaje de Aromaterapia"
-img: "/aroma-massage/IMG_0267.jpeg"
+img: "/aroma-massage/IMG_0267.webp"
 description: "Combines the power of essential oils with therapeutic massage techniques."
 description_es: "Combina el poder de los aceites esenciales con técnicas terapéuticas de masaje."
 sortOrder: 3
 images:
-  - /aroma-massage/IMG_0271.jpeg
-  - /aroma-massage/IMG_0269.jpeg
-  - /aroma-massage/IMG_0270.jpeg
+  - /aroma-massage/IMG_0271.webp
+  - /aroma-massage/IMG_0269.webp
+  - /aroma-massage/IMG_0270.webp
 paragraphs:
   - "Aromatherapy Massage is a holistic treatment that merges the benefits of therapeutic touch with the healing properties of essential oils. This calming experience not only relaxes the body but also uplifts the mind through the power of scent."
   - "Before the session begins, specific essential oils are selected based on your individual needs—whether you're looking to ease stress, boost energy, or promote better sleep. These oils are then gently massaged into the skin using smooth, flowing techniques that improve circulation and ease muscular discomfort."

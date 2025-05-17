@@ -1,14 +1,14 @@
 ---
 title: "Traditional Thai Massage"
 title_es: "Masaje Tailandés Tradicional"
-img: "/thai-massage/IMG_0178.jpeg"
+img: "/thai-massage/IMG_0178.webp"
 description: "Experience authentic Thai massage techniques that combine acupressure, stretching, and energy work for deep relaxation and renewal."
 description_es: "Experimenta técnicas auténticas de masaje tailandés que combinan acupresión, estiramientos y trabajo energético para una profunda relajación y renovación."
 sortOrder: 1
 images:
-  - /thai-massage/IMG_0187.jpeg
-  - /thai-massage/IMG_0180.jpeg
-  - /thai-massage/IMG_0185.jpeg
+  - /thai-massage/IMG_0187.webp
+  - /thai-massage/IMG_0180.webp
+  - /thai-massage/IMG_0185.webp
 paragraphs:
   - "Thai massage is a centuries-old practice rooted in Thai medicine, designed to realign the body, boost energy flow, and relieve tension through a unique combination of assisted stretching, gentle pressure, and mindful breathing."
   - "Unlike Western massage styles, Thai massage is performed on a strong stable bed, and clients remain fully clothed in comfortable attire. During the session, the therapist uses their hands, elbows, knees, and even feet to apply rhythmic pressure and guide your body through a series of yoga-like stretches."
