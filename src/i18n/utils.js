@@ -61,7 +61,8 @@ export function getAlternateURLs(currentPath, currentLang) {
   }
 
   // Special handling for contact pages
-  if (currentPath === '/contact' || currentPath === '/contacto' || currentPath === '/es/contacto') {
+  if (currentPath === '/contact' || currentPath === '/es/contacto' || 
+      currentPath === '/contacto' || currentPath === '/es/contact') {
     Object.keys(languages).forEach(lang => {
       if (lang === 'en') {
         urls[lang] = '/contact';
