@@ -25,19 +25,19 @@ export function useTranslations(lang) {
 export function getLocalizedURL(path, lang) {
   // Remove leading slash if present
   const cleanPath = path.startsWith('/') ? path.substring(1) : path;
-  
+
   // For default language, don't add language prefix (for SEO purposes)
   if (lang === defaultLanguage) {
     return `/${cleanPath}`;
   }
-  
+
   return `/${lang}/${cleanPath}`;
 }
 
 // Get alternate URLs for language switcher
 export function getAlternateURLs(currentPath, currentLang) {
   const urls = {};
-  
+
   // Special handling for service pages
   if (currentPath.includes('/service/') || currentPath.includes('/servicio/')) {
     // Extract the service slug
@@ -47,7 +47,7 @@ export function getAlternateURLs(currentPath, currentLang) {
     } else if (currentPath.includes('/servicio/')) {
       slug = currentPath.split('/servicio/')[1];
     }
-    
+
     // Generate URLs for all languages with correct service path
     Object.keys(languages).forEach(lang => {
       if (lang === 'en') {
@@ -56,10 +56,10 @@ export function getAlternateURLs(currentPath, currentLang) {
         urls[lang] = `/${lang}/servicio/${slug}`;
       }
     });
-    
+
     return urls;
   }
-  
+
   // Special handling for contact pages
   if (currentPath === '/contact' || currentPath === '/es/contacto') {
     Object.keys(languages).forEach(lang => {
@@ -69,20 +69,23 @@ export function getAlternateURLs(currentPath, currentLang) {
         urls[lang] = `/${lang}/contacto`;
       }
     });
-    
+
     return urls;
   }
-  
+
   // Regular handling for other pages
   let path = currentPath;
-  if (currentPath.startsWith(`/${currentLang}/`)) {
-    path = currentPath.substring(currentLang.length + 1);
+  // Remove language prefix from path if present
+  if (currentLang !== defaultLanguage && path.startsWith(`/${currentLang}/`)) {
+    path = path.replace(`/${currentLang}/`, '');
+  } else if (currentLang === defaultLanguage && path.startsWith(`/${defaultLanguage}/`)) {
+    path = path.replace(`/${defaultLanguage}/`, '');
   }
-  
+
   // Generate URLs for all languages
   Object.keys(languages).forEach(lang => {
     urls[lang] = getLocalizedURL(path, lang);
   });
-  
+
   return urls;
 }
