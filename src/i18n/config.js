@@ -5,7 +5,6 @@ export const languages = {
 
 export const defaultLanguage = 'en';
 
-// Define which paths should not be localized
 export const nonLocalizedPaths = [
   '/assets',
   '/favicon.ico'
