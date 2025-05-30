@@ -5,9 +5,9 @@ const { currentLang = 'en' } = Astro.props;
 const t = useTranslations(currentLang)
 ---
 
-<a href={currentLang === 'en' ? "/contact" : "/es/contact"} class="w-full justify-center items-center">
+<a href={currentLang === 'en' ? "/contact" : "/es/contact"} class="w-full flex justify-center items-center">
 <button
-class="items-center justify-center text-white my-8 btn btn-xl bg-[var(--color-warm-wood)] border-none hover:scale-110 transition ease-in-out duration-300"
+class="text-white my-8 btn btn-xl bg-[var(--color-warm-wood)] border-none hover:scale-110 transition ease-in-out duration-300"
 >{t.buttons.book}</button
 >
 </a>
