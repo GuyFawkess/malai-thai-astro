@@ -20,7 +20,7 @@ const baseUrl = currentLang === 'en' ? '/' : '/es/';
                         <img data-astro-prefetch src="/logoNav.webp" alt="Thai Massage Lanzarote Logo" class="h-24 w-24">
                     </a>
                 </li>
-                <li class="btn btn-ghost text-[var(--color-text-primary)] hover:bg-[var(--color-terracotta)] border-none text-lg"><a href={currentLang === 'en' ? "/contact" : "/es/contacto"}>{t.nav.contact}</a></li>
+                <li class="btn btn-ghost text-[var(--color-text-primary)] hover:bg-[var(--color-terracotta)] border-none text-lg"><a href={currentLang === 'en' ? "/contact" : "/es/contact"}>{t.nav.contact}</a></li>
                 <li class="btn btn-ghost text-[var(--color-text-primary)] hover:bg-[var(--color-terracotta)] border-none text-lg"><a href={`${baseUrl}#location`}>{t.nav.location}</a></li>
             </ul>
             
