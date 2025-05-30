@@ -38,21 +38,17 @@ export function getLocalizedURL(path, lang) {
 export function getAlternateURLs(currentPath, currentLang) {
   const urls = {};
 
-  // Special handling for service pages
-  if (currentPath.includes('/service/') || currentPath.includes('/servicio/')) {
+  if (currentPath.includes('/service/')) {
     let slug = '';
     if (currentPath.includes('/service/')) {
       slug = currentPath.split('/service/')[1];
-    } else if (currentPath.includes('/servicio/')) {
-      slug = currentPath.split('/servicio/')[1];
     }
-
-    // Generate URLs for all languages with correct service path
+    
     Object.keys(languages).forEach(lang => {
       if (lang === 'en') {
         urls[lang] = `/service/${slug}`;
       } else {
-        urls[lang] = `/${lang}/servicio/${slug}`;
+        urls[lang] = `/${lang}/service/${slug}`;
       }
     });
 
