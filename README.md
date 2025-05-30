@@ -1,48 +1,39 @@
-# Astro Starter Kit: Basics
+# Malaithai Massage Lanzarote Website
+Welcome to the repository for Malaithai Massage Lanzarote — a simple, bilingual static website built to showcase massage services in Lanzarote.
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+![gif-Thaiweb](https://github.com/user-attachments/assets/a8a18419-f2cf-4279-88a9-034aefee808f)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Overview
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+This is a simple static website built with **Astro** and styled using **DaisyUI**. The content for the different services is managed using **Markdown files**, which allows easy updates and avoids repetition. Additionally, special attention was given to optimizing SEO as much as possible for better visibility.
+## Challenges
 
-## 🚀 Project Structure
+- Managing bilingual content efficiently  
+- Structuring service information dynamically with Markdown  
+- Improving SEO on a static site
 
-Inside of your Astro project, you'll see the following folders and files:
+![Captura de pantalla 2025-05-30 173311](https://github.com/user-attachments/assets/97909c4b-5b7d-49b1-88a7-ba21a8fca505)
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Features
 
-## 🧞 Commands
+- Static, fast-loading website  
+- Responsive design with DaisyUI components  
+- Bilingual content support (English and Spanish)  
+- Markdown-based content management for flexibility  
 
-All commands are run from the root of the project, from a terminal:
+## Live Demo
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+Check out the live website here:  
+[https://www.malaithaimassagelanzarote.com/](https://www.malaithaimassagelanzarote.com/)
 
-## 👀 Want to learn more?
+## Getting Started
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+To run locally:
+
+```bash
+git clone https://github.com/yourusername/malaithaimassagelanzarote.git
+cd malaithaimassagelanzarote
+pnpm install
+pnpm run dev
